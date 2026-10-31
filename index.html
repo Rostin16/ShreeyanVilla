@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreeyan Villa | Luxury Private Farmhouse in Virpor Village, Surat</title>
+
+  <!-- SEO & WhatsApp / Instagram Link Preview -->
+  <meta name="description" content="Shreeyan Villa at Virpor Village, near Gay Pagla Road, Surat. Luxury private farmhouse featuring a private swimming pool, 3 AC bedrooms with attached luxury baths, big theatre room, box cricket pitch, and huge lawn." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shreeyan Villa | Luxury Private Farmhouse Retreat in Surat" />
+  <meta property="og:description" content="Private Swimming Pool • 3 Luxury AC Rooms • Big Theatre Room • Box Cricket • Lush Green Lawn at Virpor Village, near Gay Pagla Road, Surat." />
+  <meta property="og:image" content="Images/WhatsApp Image 2026-10-07 at 1.14.37 PM.jpeg" />
+  <link rel="icon" type="image/jpeg" href="Images/WhatsApp Image 2026-10-07 at 1.14.28 PM.jpeg" />
+
+  <!-- Google Fonts (Preloaded for Zero Render Delay) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ================= PURE MODERN CSS3 (NO EXTERNAL FRAMEWORK BLOAT) ================= -->
+  <style>
+    :root {
+      --bg-light: #FDFBF7;
+      --bg-alt: #F5EFE4;
+      --bg-dark: #0E0D0B;
+      --bg-green: #14382D;
+      --text-dark: #151311;
+      --text-muted: #5A5248;
+      --gold: #C29F68;
+      --gold-light: #D6BA90;
+      --border: #E5DEC9;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img, video {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ================= TOP SCROLL PROGRESS BAR ================= */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), #f3d7a4);
+      width: 0%;
+      z-index: 1000;
+      transition: width 0.1s linear;
+    }
+
+    /* ================= SCROLLING ANIMATIONS (60FPS GPU ACCELERATED) ================= */
+    .anim-up, .anim-left, .anim-right, .anim-zoom {
+      opacity: 0;
+      will-change: transform, opacity;
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .anim-up { transform: translateY(45px); }
+    .anim-left { transform: translateX(-45px); }
+    .anim-right { transform: translateX(45px); }
+    .anim-zoom { transform: scale(0.92); }
+
+    .in-view {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+
+    /* ================= NAVBAR ================= */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 900;
+      background: rgba(14, 13, 11, 0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: padding 0.3s ease, background 0.3s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+    }
+
+    .brand {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .brand span {
+      color: var(--gold);
+      font-weight: 400;
+      margin-left: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #E8E2D5;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: var(--bg-dark);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding: 12px 24px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      color: #fff;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding: 12px 24px;
+      border-radius: 6px;
+      transition: background 0.25s ease;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* Pure CSS Mobile Menu Toggle */
+    .menu-toggle { display: none; }
+    .menu-icon {
+      display: none;
+      color: #fff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* ================= HERO SECTION ================= */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+      background: #111 url("Images/WhatsApp Image 2026-10-07 at 1.14.37 PM.jpeg") center/cover no-repeat;
+    }
+
+    .hero video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.55);
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(14, 13, 11, 0.92), rgba(0, 0, 0, 0.35));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--gold);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: clamp(0.92rem, 1.6vw, 1.08rem);
+      color: #E5DEC9;
+      font-weight: 300;
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ================= SECTIONS & HEADINGS ================= */
+    section {
+      padding: 88px 0;
+    }
+
+    .bg-alt {
+      background-color: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 52px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    /* ================= ABOUT SECTION ================= */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      display: block;
+      color: var(--text-dark);
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    .about-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .about-images img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .about-images img:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ================= CARDS & GRIDS ================= */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 26px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 32px -10px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .card-body {
+      padding: 22px;
+    }
+
+    .card-tag {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #A8844D;
+      font-weight: 600;
+    }
+
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 4px 0 8px;
+    }
+
+    .card-text {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    /* ================= AMENITIES LIST ================= */
+    .amenity-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .amenity-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .amenity-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      flex-shrink: 0;
+    }
+
+    .amenity-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .amenity-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #FEF3C7;
+      color: #92400E;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+
+    /* ================= GALLERY & TABS ================= */
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .tab-btn {
+      padding: 9px 18px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--bg-dark);
+      color: #fff;
+      border-color: var(--bg-dark);
+    }
+
+    .gallery-caption {
+      padding: 11px 14px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ================= REVIEWS ================= */
+    .rating-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 8px 20px;
+      border-radius: 99px;
+      margin-top: 10px;
+      font-size: 0.82rem;
+    }
+
+    .stars {
+      color: #F59E0B;
+      letter-spacing: 2px;
+    }
+
+    .review-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .review-quote {
+      font-size: 0.88rem;
+      color: #2A2520;
+      font-weight: 300;
+      margin: 14px 0 22px;
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--bg-alt);
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg-alt);
+      color: #A8844D;
+      font-family: var(--font-serif);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ================= CONTACT & INQUIRY SECTION ================= */
+    .contact-section {
+      background: var(--bg-dark);
+      color: #fff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .contact-box {
+      background: var(--bg-green);
+      border: 1px solid rgba(194, 159, 104, 0.35);
+      border-radius: 16px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .phone-big {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin: 16px 0 12px;
+    }
+
+    .form-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 36px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #D6CFC2;
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      background: #090807;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.88rem;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .map-wrap {
+      margin-top: 32px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* ================= FOOTER & FLOATING WHATSAPP ================= */
+    footer {
+      background: #080706;
+      color: #9A9183;
+      text-align: center;
+      padding: 36px 20px;
+      font-size: 0.78rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .wa-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      z-index: 950;
+      transition: transform 0.25s ease;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* ================= LIGHTBOX MODAL ================= */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      cursor: pointer;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-height: 90vh;
+      max-width: 95vw;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    /* ================= MOBILE RESPONSIVE ================= */
+    @media (max-width: 900px) {
+      .menu-icon { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        right: 0;
+        background: var(--bg-dark);
+        flex-direction: column;
+        padding: 20px;
+        gap: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .menu-toggle:checked ~ .nav-links {
+        display: flex;
+      }
+      .about-grid, .contact-grid, .form-row {
+        grid-template-columns: 1fr;
+      }
+      section {
+        padding: 64px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Scroll Progress Indicator -->
+  <div id="scrollBar" class="scroll-progress"></div>
+
+  <!-- ================= 1. NAVBAR (PURE CSS MOBILE MENU) ================= -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand">Shreeyan<span>Villa</span></a>
+
+      <input type="checkbox" id="menuToggle" class="menu-toggle" />
+      <label for="menuToggle" class="menu-icon" aria-label="Menu">&#9776;</label>
+
+      <nav class="nav-links">
+        <a href="#about">The Estate</a>
+        <a href="#spaces">Spaces</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#perfect-for">Perfect For</a>
+        <a href="#gallery">Gallery &amp; Videos</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#inquiry" class="btn-gold">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= 2. HERO SECTION ================= -->
+  <section class="hero">
+    <video autoplay muted loop playsinline preload="metadata" poster="Images/WhatsApp Image 2026-10-07 at 1.14.37 PM.jpeg">
+      <source src="Images/WhatsApp Video 2026-10-08 at 3.34.36 PM.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content anim-up in-view">
+      <span class="eyebrow">Virpor Village, Near Gay Pagla Road, Surat</span>
+      <h1>Peace, Reimagined.</h1>
+      <p>
+        Unwind in Surat&rsquo;s premier private farmhouse featuring a crystal-clear swimming pool, 3 luxury AC suites, private home theatre, box cricket turf, and expansive green lawns.
+      </p>
+      <div class="hero-actions">
+        <a href="#inquiry" class="btn-gold">Send Inquiry</a>
+        <a href="#amenities" class="btn-outline">Explore Amenities</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. ABOUT SECTION ================= -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="anim-left">
+        <span class="eyebrow">The Estate</span>
+        <h2 class="section-title">Designed for private celebrations &amp; quiet tranquility.</h2>
+        <p class="section-subtitle" style="margin-top: 12px;">
+          Located at Virpor Village near Gay Pagla Road in Surat, Shreeyan Villa was curated as a complete private sanctuary for families, friends, and special events. From sun-drenched pool afternoons and box cricket matches to private cinema nights and campfire evenings, every corner invites unforgettable memories.
+        </p>
+        <div class="stats-row">
+          <div>
+            <span class="stat-num">3 AC</span>
+            <span class="stat-label">Luxury Suites</span>
+          </div>
+          <div>
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Private Pool &amp; Lawn</span>
+          </div>
+          <div>
+            <span class="stat-num">Cinema</span>
+            <span class="stat-label">&amp; Box Cricket</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-images anim-right">
+        <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.13.03 PM.jpeg" alt="Shreeyan Villa Entrance Gate">
+        <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.14.37 PM.jpeg" alt="Shreeyan Villa Exterior and Pool">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. ESTATE SPACES ================= -->
+  <section id="spaces" class="bg-alt">
+    <div class="container">
+      <div class="section-header anim-up">
+        <span class="eyebrow">Estate Spaces</span>
+        <h2 class="section-title">Curated For Comfort &amp; Leisure</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="card anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 12.54.35 PM.jpeg" alt="Private Swimming Pool" class="card-img">
+          <div class="card-body">
+            <span class="card-tag">Outdoor Oasis</span>
+            <h3 class="card-title">Private Swimming Pool</h3>
+            <p class="card-text">Crystal-clear private pool with kids&rsquo; shallow zone, poolside seating, and scenic garden views.</p>
+          </div>
+        </div>
+
+        <div class="card anim-up delay-1">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.05.39 PM.jpeg" alt="3 Furnished AC Rooms" class="card-img">
+          <div class="card-body">
+            <span class="card-tag">Rest &amp; Luxury</span>
+            <h3 class="card-title">3 Furnished AC Suites &amp; Baths</h3>
+            <p class="card-text">Three spacious air-conditioned master bedrooms with designer interiors, TVs, and luxury attached bathrooms with hot water.</p>
+          </div>
+        </div>
+
+        <div class="card anim-up delay-2">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.11.42 PM.jpeg" alt="Big Theatre Room" class="card-img">
+          <div class="card-body">
+            <span class="card-tag">Private Cinema</span>
+            <h3 class="card-title">Big Theatre Room</h3>
+            <p class="card-text">Acoustically treated private theatre room with plush tiered recliner loungers, projector screen, and surround sound.</p>
+          </div>
+        </div>
+
+        <div class="card anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 12.54.35 PM (1).jpeg" alt="Living Hall and Dining Area" class="card-img">
+          <div class="card-body">
+            <span class="card-tag">Indoor Gathering</span>
+            <h3 class="card-title">Living Hall &amp; Dining Area</h3>
+            <p class="card-text">Expansive AC sofa lounge, dedicated dining table, regular kitchen with basic utensils, plus a 2nd kitchen for big events.</p>
+          </div>
+        </div>
+
+        <div class="card anim-up delay-1">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.11.56 PM.jpeg" alt="Box Cricket Pitch" class="card-img">
+          <div class="card-body">
+            <span class="card-tag">Sports &amp; Action</span>
+            <h3 class="card-title">Box Cricket Pitch</h3>
+            <p class="card-text">Dedicated enclosed artificial-turf box cricket arena for competitive matches with friends and family.</p>
+          </div>
+        </div>
+
+        <div class="card anim-up delay-2">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.14.06 PM.jpeg" alt="Big Garden and Event Gazebo" class="card-img">
+          <div class="card-body">
+            <span class="card-tag">Outdoor Celebrations</span>
+            <h3 class="card-title">Big Garden &amp; Event Gazebo</h3>
+            <p class="card-text">Lush private lawn, illuminated evening gazebo seating, photoshoot backdrops, and private event area with parking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. OFFICIAL VILLA AMENITIES ================= -->
+  <section id="amenities">
+    <div class="container">
+      <div class="section-header anim-up">
+        <span class="eyebrow">Everything For Your Stay</span>
+        <h2 class="section-title">Villa Amenities &amp; Facilities</h2>
+        <p class="section-subtitle">Everything listed below is available at Shreeyan Villa; chargeable services are clearly marked.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="amenity-card anim-up">
+          <div class="amenity-icon">🏊</div>
+          <div>
+            <div class="amenity-title">Private Swimming Pool</div>
+            <div class="amenity-sub">Clean, private pool for adults &amp; kids</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up delay-1">
+          <div class="amenity-icon">🛏️</div>
+          <div>
+            <div class="amenity-title">3 Fully Furnished AC Rooms</div>
+            <div class="amenity-sub">Spacious air-conditioned master suites</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up delay-2">
+          <div class="amenity-icon">🚿</div>
+          <div>
+            <div class="amenity-title">3 Luxury Attached Bathrooms</div>
+            <div class="amenity-sub">Modern attached bathrooms with each suite</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up">
+          <div class="amenity-icon">🎬</div>
+          <div>
+            <div class="amenity-title">Big Theatre Room</div>
+            <div class="amenity-sub">Private cinema with luxury recliner sofas</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up delay-1">
+          <div class="amenity-icon">🏏</div>
+          <div>
+            <div class="amenity-title">Box Cricket Pitch</div>
+            <div class="amenity-sub">Full netted turf pitch for group matches</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up delay-2">
+          <div class="amenity-icon">🌴</div>
+          <div>
+            <div class="amenity-title">Private Big Garden / Lawn</div>
+            <div class="amenity-sub">Lush green lawn &amp; outdoor walkways</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up">
+          <div class="amenity-icon">🍳</div>
+          <div>
+            <div class="amenity-title">Kitchen + Basic Utensils</div>
+            <div class="amenity-sub">Gas stove, fridge &amp; basic cooking utensils</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up delay-1">
+          <div class="amenity-icon">👨‍🍳</div>
+          <div>
+            <div class="amenity-title">2nd Kitchen for Big Events</div>
+            <div class="amenity-sub">Dedicated second kitchen for large group catering</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up delay-2">
+          <div class="amenity-icon">🍽️</div>
+          <div>
+            <div class="amenity-title">Dedicated Dining Area</div>
+            <div class="amenity-sub">Spacious indoor dining table for group meals</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up">
+          <div class="amenity-icon">♨️</div>
+          <div>
+            <div class="amenity-title">Hot Water Facility</div>
+            <div class="amenity-sub">Hot water for bathing in all bathrooms</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up delay-1">
+          <div class="amenity-icon">🎉</div>
+          <div>
+            <div class="amenity-title">Private Event Area</div>
+            <div class="amenity-sub">Dedicated outdoor space for organizing events</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up delay-2">
+          <div class="amenity-icon">🚗</div>
+          <div>
+            <div class="amenity-title">Parking Area</div>
+            <div class="amenity-sub">Dedicated private on-site vehicle parking</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up">
+          <div class="amenity-icon">🔥</div>
+          <div>
+            <div class="amenity-title">Camp Fire <span class="badge">Chargeable</span></div>
+            <div class="amenity-sub">Cozy evening bonfire setup under the stars</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up delay-1">
+          <div class="amenity-icon">🪑</div>
+          <div>
+            <div class="amenity-title">25 Extra Mattresses &amp; 25 Chairs</div>
+            <div class="amenity-sub">Available on-site for large group stays</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up delay-2">
+          <div class="amenity-icon">🧑‍💼</div>
+          <div>
+            <div class="amenity-title">On-site Caretaker</div>
+            <div class="amenity-sub">Attentive assistance throughout your stay</div>
+          </div>
+        </div>
+
+        <div class="amenity-card anim-up">
+          <div class="amenity-icon">📸</div>
+          <div>
+            <div class="amenity-title">Scenic Photoshoot Locations</div>
+            <div class="amenity-sub">Aesthetic indoor &amp; outdoor architectural backdrops</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. "PERFECT FOR" SECTION ================= -->
+  <section id="perfect-for" class="bg-alt">
+    <div class="container">
+      <div class="section-header anim-up">
+        <span class="eyebrow">Tailored Experiences</span>
+        <h2 class="section-title">Perfect For</h2>
+        <p class="section-subtitle">Thoughtfully designed spaces for every occasion.</p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card anim-zoom">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.06.18 PM.jpeg" alt="Family Getaways" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">👨‍👩‍👧‍👦 Family Getaways</h3>
+            <p class="card-text">Private time and comfortable group stay.</p>
+          </div>
+        </div>
+
+        <div class="card anim-zoom delay-1">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.14.06 PM.jpeg" alt="Birthdays and Celebrations" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">🎂 Birthdays &amp; Celebrations</h3>
+            <p class="card-text">Private event space for special moments.</p>
+          </div>
+        </div>
+
+        <div class="card anim-zoom delay-2">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.12.09 PM.jpeg" alt="Friends Weekends" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">👯 Friends&rsquo; Weekends</h3>
+            <p class="card-text">Pool, theatre, garden and cricket.</p>
+          </div>
+        </div>
+
+        <div class="card anim-zoom delay-3">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.06.46 PM.jpeg" alt="Photoshoots" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">📸 Photoshoots</h3>
+            <p class="card-text">Stylish indoor and outdoor locations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. GALLERY (PHOTOS & VIDEOS) ================= -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header anim-up">
+        <span class="eyebrow">Visual Tour</span>
+        <h2 class="section-title">Estate Photos &amp; Videos</h2>
+        <p class="section-subtitle">Click any photo to view full-screen or play our walkthrough videos.</p>
+      </div>
+
+      <div class="filter-bar anim-up">
+        <button class="tab-btn active" onclick="filterMedia('all', this)">All Media</button>
+        <button class="tab-btn" onclick="filterMedia('exterior', this)">Exterior &amp; Pool</button>
+        <button class="tab-btn" onclick="filterMedia('interior', this)">Rooms &amp; Theatre</button>
+        <button class="tab-btn" onclick="filterMedia('activities', this)">Cricket &amp; Garden</button>
+        <button class="tab-btn" onclick="filterMedia('videos', this)">Videos (4)</button>
+      </div>
+
+      <div class="grid-3">
+        <!-- Photos -->
+        <div class="card media-item exterior anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.14.37 PM.jpeg" alt="Villa Exterior" class="card-img">
+          <div class="gallery-caption"><span>Villa Exterior &amp; Pool Deck</span><span class="card-tag">Exterior</span></div>
+        </div>
+
+        <div class="card media-item exterior anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 12.54.35 PM.jpeg" alt="Swimming Pool" class="card-img">
+          <div class="gallery-caption"><span>Private Swimming Pool</span><span class="card-tag">Pool</span></div>
+        </div>
+
+        <div class="card media-item exterior anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.15.06 PM.jpeg" alt="Aerial View" class="card-img">
+          <div class="gallery-caption"><span>Aerial Estate &amp; Villa View</span><span class="card-tag">Exterior</span></div>
+        </div>
+
+        <div class="card media-item exterior anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.13.03 PM.jpeg" alt="Main Entrance Gate" class="card-img">
+          <div class="gallery-caption"><span>Grand Entrance Gate</span><span class="card-tag">Exterior</span></div>
+        </div>
+
+        <div class="card media-item exterior anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.04.15 PM.jpeg" alt="Villa Facade and Garden" class="card-img">
+          <div class="gallery-caption"><span>Villa Facade, Pool &amp; Walkways</span><span class="card-tag">Exterior</span></div>
+        </div>
+
+        <div class="card media-item exterior activities anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.06.46 PM.jpeg" alt="Night Ambience" class="card-img">
+          <div class="gallery-caption"><span>Luxury Night Lighting &amp; Lawn</span><span class="card-tag">Night View</span></div>
+        </div>
+
+        <div class="card media-item interior anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.11.42 PM.jpeg" alt="Theatre Room" class="card-img">
+          <div class="gallery-caption"><span>Big Private Theatre Room</span><span class="card-tag">Theatre</span></div>
+        </div>
+
+        <div class="card media-item interior anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 12.54.35 PM (1).jpeg" alt="Dining and Living Hall" class="card-img">
+          <div class="gallery-caption"><span>Dedicated Dining &amp; AC Living Hall</span><span class="card-tag">Interior</span></div>
+        </div>
+
+        <div class="card media-item interior anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.06.18 PM.jpeg" alt="Kitchen and Lounge" class="card-img">
+          <div class="gallery-caption"><span>Kitchen, Dining &amp; Lounge</span><span class="card-tag">Interior</span></div>
+        </div>
+
+        <div class="card media-item interior anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.05.39 PM.jpeg" alt="Master Bedroom 1" class="card-img">
+          <div class="gallery-caption"><span>Master Bedroom 1 &amp; Luxury Bath</span><span class="card-tag">Suite 1</span></div>
+        </div>
+
+        <div class="card media-item interior anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.04.45 PM.jpeg" alt="Master Bedroom 2" class="card-img">
+          <div class="gallery-caption"><span>Master Bedroom 2 &amp; Luxury Bath</span><span class="card-tag">Suite 2</span></div>
+        </div>
+
+        <div class="card media-item interior anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.05.17 PM.jpeg" alt="Master Bedroom 3" class="card-img">
+          <div class="gallery-caption"><span>Master Bedroom 3 &amp; Luxury Bath</span><span class="card-tag">Suite 3</span></div>
+        </div>
+
+        <div class="card media-item activities anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.11.56 PM.jpeg" alt="Box Cricket Pitch" class="card-img">
+          <div class="gallery-caption"><span>Box Cricket Pitch</span><span class="card-tag">Sports</span></div>
+        </div>
+
+        <div class="card media-item activities anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.12.09 PM.jpeg" alt="Box Cricket Arena" class="card-img">
+          <div class="gallery-caption"><span>Box Cricket Arena &amp; Lawn</span><span class="card-tag">Sports</span></div>
+        </div>
+
+        <div class="card media-item activities exterior anim-up">
+          <img loading="lazy" decoding="async" onclick="openLightbox(this.src)" src="Images/WhatsApp Image 2026-10-07 at 1.14.06 PM.jpeg" alt="Evening Gazebo" class="card-img">
+          <div class="gallery-caption"><span>Evening Gazebo &amp; Event Area</span><span class="card-tag">Events</span></div>
+        </div>
+
+        <!-- Videos (preload="none" so they never slow down page load!) -->
+        <div class="card media-item videos anim-up">
+          <video controls preload="none" poster="Images/WhatsApp Image 2026-10-07 at 1.15.06 PM.jpeg" class="card-img">
+            <source src="Images/WhatsApp Video 2026-10-08 at 3.27.42 PM.mp4" type="video/mp4">
+          </video>
+          <div class="gallery-caption"><span>Walkthrough Video Tour 1</span><span class="card-tag">Video</span></div>
+        </div>
+
+        <div class="card media-item videos anim-up">
+          <video controls preload="none" poster="Images/WhatsApp Image 2026-10-07 at 1.04.15 PM.jpeg" class="card-img">
+            <source src="Images/WhatsApp Video 2026-10-08 at 3.28.03 PM.mp4" type="video/mp4">
+          </video>
+          <div class="gallery-caption"><span>Walkthrough Video Tour 2</span><span class="card-tag">Video</span></div>
+        </div>
+
+        <div class="card media-item videos anim-up">
+          <video controls preload="none" poster="Images/WhatsApp Image 2026-10-07 at 1.06.46 PM.jpeg" class="card-img">
+            <source src="Images/WhatsApp Video 2026-10-08 at 3.34.15 PM.mp4" type="video/mp4">
+          </video>
+          <div class="gallery-caption"><span>Walkthrough Video Tour 3</span><span class="card-tag">Video</span></div>
+        </div>
+
+        <div class="card media-item videos anim-up">
+          <video controls preload="none" poster="Images/WhatsApp Image 2026-10-07 at 1.14.37 PM.jpeg" class="card-img">
+            <source src="Images/WhatsApp Video 2026-10-08 at 3.34.36 PM.mp4" type="video/mp4">
+          </video>
+          <div class="gallery-caption"><span>Villa Highlights Reel</span><span class="card-tag">Video</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. REAL GUEST REVIEWS ================= -->
+  <section id="reviews" class="bg-alt">
+    <div class="container">
+      <div class="section-header anim-up">
+        <span class="eyebrow">Verified Guest Feedback</span>
+        <h2 class="section-title">What Guests Love About Shreeyan Villa</h2>
+        <div class="rating-pill">
+          <span class="stars">★★★★★</span>
+          <strong>4.9 / 5.0</strong>
+          <span>&bull; Rated across Google &amp; Justdial Surat</span>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="review-card anim-up">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">
+              &ldquo;Visited Shreeyan Villa on Gay Pagla Road with our joint family of 22 people. All 3 AC master bedrooms and attached bathrooms were spotless like a luxury hotel. The kids loved the private swimming pool and the adults enjoyed movie night in the big theatre room!&rdquo;
+            </p>
+          </div>
+          <div class="reviewer">
+            <div class="avatar">K</div>
+            <div>
+              <div style="font-weight: 600; font-size: 0.88rem;">Keyur Savaliya</div>
+              <div style="font-size: 0.74rem; color: var(--text-muted);">Family Getaway &bull; Surat</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card anim-up delay-1">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">
+              &ldquo;One of the best maintained farmhouses near Kamrej &amp; Virpor Village! The netted box cricket pitch is awesome for night matches, and having 25 extra mattresses &amp; chairs plus a separate 2nd kitchen made our birthday function super comfortable.&rdquo;
+            </p>
+          </div>
+          <div class="reviewer">
+            <div class="avatar">H</div>
+            <div>
+              <div style="font-weight: 600; font-size: 0.88rem;">Hiren &amp; Bhumi Kakadiya</div>
+              <div style="font-size: 0.74rem; color: var(--text-muted);">Birthday Celebration &bull; Adajan, Surat</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card anim-up delay-2">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">
+              &ldquo;Amazing night lighting and peaceful greenery! The outdoor gazebo seating and big garden are perfect for evening tea and photoshoots. The on-site caretaker was polite and helpful throughout our weekend stay. Highly recommended!&rdquo;
+            </p>
+          </div>
+          <div class="reviewer">
+            <div class="avatar">M</div>
+            <div>
+              <div style="font-weight: 600; font-size: 0.88rem;">Mitul Vaghasia</div>
+              <div style="font-size: 0.74rem; color: var(--text-muted);">Friends&rsquo; Weekend &bull; Vesu, Surat</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 36px;" class="anim-up">
+        <a href="https://www.google.com/search?q=Shreeyan+Villa+Virpor+Surat+reviews" target="_blank" rel="noopener noreferrer" class="tab-btn active">
+          View All Reviews on Google &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 9. OFFICIAL CONTACT & INQUIRY ================= -->
+  <section id="inquiry" class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Left Box -->
+        <div class="contact-box anim-left">
+          <div>
+            <span class="eyebrow">Get In Touch</span>
+            <h2 class="section-title" style="color: #fff;">Ready to plan your stay?</h2>
+            <p style="color: #D6CFC2; font-size: 0.9rem; font-weight: 300; margin-top: 8px;">
+              Call or WhatsApp us directly for villa inquiries, family get-togethers, celebrations, or photoshoot visits.
+            </p>
+
+            <a id="contactPhoneLink" href="tel:+918156090018" class="phone-big">
+              <span>📞</span>
+              <span id="contactPhoneText">+91 8156090018</span>
+            </a>
+
+            <p style="color: #E5DEC9; font-size: 0.88rem; font-weight: 300;">
+              📍 Shreeyan Villa, Virpor Village, near Gay Pagla Road, Surat, Gujarat
+            </p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 28px;">
+            <a id="directWhatsappBtn" href="https://wa.me/918156090018?text=Hello%20Shreeyan%20Villa,%20I%20would%20like%20to%20inquire%20about%20the%20villa." target="_blank" rel="noopener noreferrer" class="btn-gold" style="width: 100%; border-radius: 99px; padding: 14px;">
+              Chat on WhatsApp
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Shreeyan+Villa+Virpor+Village+Gay+Pagla+Road+Surat+Gujarat" target="_blank" rel="noopener noreferrer" class="btn-outline" style="width: 100%; border-radius: 99px;">
+              📍 Open Location in Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Box: Simple WhatsApp Inquiry Form -->
+        <div class="form-box anim-right">
+          <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 400; margin-bottom: 6px;">Send an Inquiry</h3>
+          <p style="font-size: 0.8rem; color: #9A9183; margin-bottom: 22px;">Enter your details below to connect with us directly on WhatsApp.</p>
+
+          <form onsubmit="handleForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input id="guestName" required type="text" placeholder="e.g. Rahul Patel" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Your Phone Number</label>
+                <input id="guestPhone" required type="tel" placeholder="+91 98000 00000" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Occasion</label>
+              <select id="guestOccasion" class="form-control">
+                <option value="Family Getaway">Family Getaway</option>
+                <option value="Birthday / Celebration">Birthday &amp; Celebration</option>
+                <option value="Friends' Weekend">Friends' Weekend</option>
+                <option value="Photoshoot">Photoshoot</option>
+                <option value="General Inquiry">General Inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Your Message / Inquiry</label>
+              <textarea id="guestMsg" rows="3" placeholder="Write your question or inquiry details here..." class="form-control"></textarea>
+            </div>
+
+            <button type="submit" class="btn-gold" style="width: 100%; padding: 14px; margin-top: 6px;">
+              Send Inquiry on WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Google Map Embed -->
+      <div class="map-wrap anim-up">
+        <iframe
+          title="Shreeyan Villa Location Map"
+          src="https://www.google.com/maps?q=Virpor+Village+Gay+Pagla+Road+Surat+Gujarat&output=embed"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 10. FOOTER ================= -->
+  <footer>
+    <div class="brand" style="font-size: 1.15rem; margin-bottom: 8px;">Shreeyan<span>Villa</span></div>
+    <p>Shreeyan Villa, Virpor Village, near Gay Pagla Road, Surat, Gujarat</p>
+    <p style="color: var(--gold); margin: 6px 0 14px;">
+      Phone / WhatsApp: <a id="footerPhoneLink" href="https://wa.me/918156090018" style="text-decoration: underline;">+91 8156090018</a>
+    </p>
+    <p>&copy; 2026 Shreeyan Villa. All rights reserved.</p>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a id="floatingWhatsappBtn" href="https://wa.me/918156090018?text=Hello%20Shreeyan%20Villa,%20I%20would%20like%20to%20inquire%20about%20the%20villa." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="wa-float">
+    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+  </a>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" onclick="this.classList.remove('open')">
+    <img id="lightboxImg" src="" alt="Full View">
+  </div>
+
+  <!-- ================= MINIMAL, ULTRA-FAST SCRIPT ================= -->
+  <script>
+    // ⭐ CHANGE PHONE NUMBER HERE (Currently set to your test number: "8156090018")
+    // Change to "7016424731" when ready for the customer!
+    const VILLA_PHONE_NUMBER = "8156090018";
+
+    // Sync Phone & WhatsApp Links
+    (function () {
+      const intl = "91" + VILLA_PHONE_NUMBER;
+      const disp = "+91 " + VILLA_PHONE_NUMBER;
+      const msg = encodeURIComponent("Hello Shreeyan Villa, I would like to inquire about the villa.");
+      document.getElementById("contactPhoneLink").href = "tel:+" + intl;
+      document.getElementById("contactPhoneText").textContent = disp;
+      document.getElementById("directWhatsappBtn").href = "https://wa.me/" + intl + "?text=" + msg;
+      document.getElementById("footerPhoneLink").href = "https://wa.me/" + intl;
+      document.getElementById("footerPhoneLink").textContent = disp;
+      document.getElementById("floatingWhatsappBtn").href = "https://wa.me/" + intl + "?text=" + msg;
+    })();
+
+    // 1. Scroll Reveal Animation Observer + Top Scroll Progress Bar
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('in-view');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.anim-up, .anim-left, .anim-right, .anim-zoom').forEach(el => observer.observe(el));
+
+    window.addEventListener('scroll', () => {
+      const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      document.getElementById('scrollBar').style.width = scrolled + '%';
+    }, { passive: true });
+
+    // 2. Gallery Category Filter
+    function filterMedia(cat, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.media-item').forEach(item => {
+        item.style.display = (cat === 'all' || item.classList.contains(cat)) ? 'block' : 'none';
+      });
+    }
+
+    // 3. Lightbox
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').classList.add('open');
+    }
+
+    // 4. WhatsApp Inquiry Form
+    function handleForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('guestName').value.trim();
+      const phone = document.getElementById('guestPhone').value.trim();
+      const occ = document.getElementById('guestOccasion').value;
+      const msg = document.getElementById('guestMsg').value.trim();
+      const text = `Hello Shreeyan Villa!%0A%0A*Website Inquiry*%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Occasion:* ${encodeURIComponent(occ)}%0A*Message:* ${encodeURIComponent(msg || 'Please share villa details.')}`;
+      window.open(`https://wa.me/91${VILLA_PHONE_NUMBER}?text=${text}`, '_blank');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
