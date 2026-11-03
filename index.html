@@ -1176,6 +1176,64 @@
             transform: scale(1.1);
         }
 
+        .back-top-float {
+            position: fixed;
+            bottom: 84px;
+            right: 23px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(14, 13, 11, 0.92);
+            color: var(--gold);
+            border: 1.5px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+            z-index: 949;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(14px);
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .back-top-float.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-top-float:hover {
+            background: var(--gold);
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-top-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 99px;
+            border: 1px solid rgba(194, 159, 104, 0.4);
+            background: rgba(194, 159, 104, 0.08);
+            color: var(--gold-light);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        .footer-top-btn:hover {
+            background: var(--gold);
+            color: var(--bg-dark);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
         /* Lightbox Modal */
         .lightbox {
             display: none;
@@ -1238,6 +1296,36 @@
             }
         }
 
+        .mobile-more-wrap {
+            display: none;
+            text-align: center;
+            margin-top: 22px;
+        }
+
+        .btn-mobile-more {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 11px 24px;
+            border-radius: 99px;
+            border: 1.5px solid var(--gold);
+            background: #fff;
+            color: var(--bg-dark);
+            font-size: 0.76rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            transition: all 0.25s ease;
+        }
+
+        .btn-mobile-more:hover {
+            background: var(--bg-dark);
+            color: var(--gold-light);
+        }
+
         @media (max-width: 768px) {
             .form-row {
                 grid-template-columns: 1fr;
@@ -1252,6 +1340,83 @@
             .stats-row {
                 gap: 12px;
             }
+
+            /* 2-Column Compact Layout on Mobile for Amenities & Gallery */
+            #amenities .grid-3,
+            #gallery .grid-3 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            #amenities .amenity-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px;
+                gap: 8px;
+                border-radius: 10px;
+            }
+
+            #amenities .amenity-icon {
+                width: 36px;
+                height: 36px;
+                border-radius: 8px;
+            }
+
+            #amenities .amenity-icon svg {
+                width: 17px;
+                height: 17px;
+            }
+
+            #amenities .amenity-title {
+                font-size: 0.82rem;
+                line-height: 1.28;
+            }
+
+            #amenities .amenity-sub {
+                font-size: 0.68rem;
+                line-height: 1.35;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            #amenities .badge {
+                display: inline-block;
+                margin-left: 0;
+                margin-top: 3px;
+                font-size: 0.52rem;
+                padding: 1px 6px;
+            }
+
+            #gallery .card {
+                border-radius: 10px;
+            }
+
+            #gallery .gallery-caption {
+                padding: 8px 10px;
+                font-size: 0.7rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2px;
+            }
+
+            #gallery .card-tag {
+                font-size: 0.56rem;
+            }
+
+            /* Hide extra items on mobile until expanded */
+            #amenities .grid-3:not(.mobile-expanded) .amenity-card:nth-child(n+9) {
+                display: none;
+            }
+
+            #gallery .grid-3.mobile-collapsed .media-item.mobile-extra {
+                display: none !important;
+            }
+
+            .mobile-more-wrap {
+                display: block;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1262,7 +1427,8 @@
             }
 
             .about-images {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
 
             .filter-bar {
@@ -1271,10 +1437,6 @@
                 padding-bottom: 6px;
                 flex-wrap: nowrap;
                 -webkit-overflow-scrolling: touch;
-            }
-
-            .amenity-card {
-                padding: 14px 16px;
             }
         }
 
@@ -1752,6 +1914,13 @@
                     </div>
                 </div>
             </div>
+
+            <div class="mobile-more-wrap">
+                <button type="button" id="amenitiesMoreBtn" class="btn-mobile-more" onclick="toggleAmenitiesMobile()">
+                    <span>View All 16 Amenities</span>
+                    <span id="amenitiesMoreIcon">&#9662;</span>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -2016,6 +2185,13 @@
                     <div class="gallery-caption"><span>Garden &amp; Outdoor Highlights</span><span class="card-tag">HD
                             Video</span></div>
                 </div>
+            </div>
+
+            <div id="galleryMoreWrap" class="mobile-more-wrap">
+                <button type="button" id="galleryMoreBtn" class="btn-mobile-more" onclick="toggleGalleryMobile()">
+                    <span>View All 21 Photos &amp; Videos</span>
+                    <span id="galleryMoreIcon">&#9662;</span>
+                </button>
             </div>
         </div>
     </section>
@@ -2368,6 +2544,14 @@
         </div>
     </footer>
 
+    <!-- Floating Back to Top Button -->
+    <a href="#" id="backToTopBtn" class="back-top-float" aria-label="Scroll to Top" title="Back to Top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </a>
+
     <!-- Floating WhatsApp Button -->
     <a id="floatingWhatsappBtn"
         href="https://wa.me/917016424731?text=Hello%20Shreeyan%20Villa,%20I%20would%20like%20to%20inquire%20about%20the%20villa."
@@ -2432,6 +2616,7 @@
         // 3. Scroll Progress Indicator + Parallax on Desktop
         const mainNav = document.getElementById('mainNav');
         const heroVideo = document.getElementById('heroVideo');
+        const backToTopBtn = document.getElementById('backToTopBtn');
 
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
@@ -2444,18 +2629,69 @@
                 mainNav.classList.toggle('scrolled', scrollY > 40);
             }
 
+            if (backToTopBtn) {
+                backToTopBtn.classList.toggle('visible', scrollY > 450);
+            }
+
             // Parallax strictly on desktop to avoid mobile scroll-lag
             if (heroVideo && window.innerWidth > 768 && scrollY < window.innerHeight) {
                 heroVideo.style.transform = `translate3d(0, ${scrollY * 0.22}px, 0)`;
             }
         }, { passive: true });
 
-        // 4. Gallery Category Filter
+        // 4. Gallery Category Filter & Mobile "View All" Toggles
+        const galleryGrid = document.querySelector('#gallery .grid-3');
+        const allMediaItems = Array.from(document.querySelectorAll('#gallery .media-item'));
+        allMediaItems.forEach((item, idx) => {
+            if (idx >= 8) item.classList.add('mobile-extra');
+        });
+        if (galleryGrid) galleryGrid.classList.add('mobile-collapsed');
+
+        function toggleAmenitiesMobile() {
+            const grid = document.querySelector('#amenities .grid-3');
+            const btn = document.getElementById('amenitiesMoreBtn');
+            const expanded = grid.classList.toggle('mobile-expanded');
+            btn.innerHTML = expanded
+                ? '<span>Show Less Amenities</span><span>&#9652;</span>'
+                : '<span>View All 16 Amenities</span><span>&#9662;</span>';
+            if (expanded) {
+                grid.querySelectorAll('.amenity-card').forEach(c => c.classList.add('in-view'));
+            }
+        }
+
+        function toggleGalleryMobile() {
+            if (!galleryGrid) return;
+            const btn = document.getElementById('galleryMoreBtn');
+            const collapsed = galleryGrid.classList.toggle('mobile-collapsed');
+            btn.innerHTML = collapsed
+                ? '<span>View All 21 Photos &amp; Videos</span><span>&#9662;</span>'
+                : '<span>Show Less Photos &amp; Videos</span><span>&#9652;</span>';
+            if (!collapsed) {
+                allMediaItems.forEach(item => item.classList.add('in-view'));
+            }
+        }
+
         function filterMedia(cat, btn) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            document.querySelectorAll('.media-item').forEach(item => {
-                item.style.display = (cat === 'all' || item.classList.contains(cat)) ? 'block' : 'none';
+            const moreWrap = document.getElementById('galleryMoreWrap');
+
+            if (cat === 'all') {
+                if (moreWrap) moreWrap.style.display = '';
+                if (galleryGrid) {
+                    galleryGrid.classList.add('mobile-collapsed');
+                    const gBtn = document.getElementById('galleryMoreBtn');
+                    if (gBtn) gBtn.innerHTML = '<span>View All 21 Photos &amp; Videos</span><span>&#9662;</span>';
+                }
+            } else {
+                if (moreWrap) moreWrap.style.display = 'none';
+                if (galleryGrid) galleryGrid.classList.remove('mobile-collapsed');
+            }
+
+            allMediaItems.forEach(item => {
+                const show = (cat === 'all' || item.classList.contains(cat));
+                item.style.display = show ? 'flex' : 'none';
+                if (show) item.classList.add('in-view');
             });
         }
 
