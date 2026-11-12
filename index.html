@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -340,6 +340,7 @@
                 transform: translateY(-16px);
                 letter-spacing: 0.42em;
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -353,6 +354,7 @@
                 transform: translateY(105%) scale(0.96);
                 filter: blur(8px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1);
@@ -361,9 +363,12 @@
         }
 
         @keyframes heroGoldShimmer {
-            0%, 100% {
+
+            0%,
+            100% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
@@ -374,6 +379,7 @@
                 opacity: 0;
                 transform: scaleX(0);
             }
+
             100% {
                 opacity: 1;
                 transform: scaleX(1);
@@ -385,6 +391,7 @@
                 opacity: 0;
                 transform: translateY(24px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -938,11 +945,204 @@
             color: #fff;
             font-family: inherit;
             font-size: 0.88rem;
+            color-scheme: dark;
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--gold);
+        }
+
+        /* Custom Luxury Calendar Picker */
+        .date-picker-group {
+            position: relative;
+        }
+
+        .date-input-wrap {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .date-input-wrap input {
+            cursor: pointer;
+            padding-right: 42px;
+        }
+
+        .date-picker-icon-btn {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--gold);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            pointer-events: none;
+        }
+
+        .villa-calendar-pop {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            width: 100%;
+            max-width: 320px;
+            background: #111B16;
+            border: 1px solid rgba(194, 159, 104, 0.45);
+            border-radius: 12px;
+            padding: 14px 14px 10px;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(194, 159, 104, 0.15);
+            z-index: 9999;
+            user-select: none;
+        }
+
+        .cal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .cal-title {
+            font-family: var(--font-serif);
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            letter-spacing: 0.02em;
+        }
+
+        .cal-nav-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(194, 159, 104, 0.25);
+            color: var(--gold-light);
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            font-size: 1.2rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .cal-nav-btn:hover:not(:disabled) {
+            background: var(--gold);
+            color: #0E0D0B;
+        }
+
+        .cal-nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .cal-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: #9A9183;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+
+        .cal-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+        }
+
+        .cal-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.82rem;
+            color: #E5DEC9;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            font-family: inherit;
+        }
+
+        .cal-day.empty {
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .cal-day:not(.disabled):not(.empty):hover {
+            background: rgba(194, 159, 104, 0.25);
+            border-color: rgba(194, 159, 104, 0.45);
+            color: #fff;
+        }
+
+        .cal-day.today {
+            border-color: var(--gold);
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        .cal-day.selected {
+            background: var(--gold) !important;
+            color: #0E0D0B !important;
+            font-weight: 700 !important;
+            border-color: var(--gold) !important;
+            box-shadow: 0 2px 8px rgba(194, 159, 104, 0.4);
+        }
+
+        .cal-day.disabled {
+            color: rgba(255, 255, 255, 0.2);
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .cal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .cal-today-btn,
+        .cal-close-btn {
+            background: none;
+            border: none;
+            font-size: 0.74rem;
+            cursor: pointer;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: inherit;
+            transition: color 0.15s;
+        }
+
+        .cal-today-btn {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .cal-today-btn:hover {
+            color: var(--gold-light);
+            text-decoration: underline;
+        }
+
+        .cal-close-btn {
+            color: #9A9183;
+        }
+
+        .cal-close-btn:hover {
+            color: #fff;
         }
 
         .map-wrap {
@@ -1065,6 +1265,7 @@
             .map-wrap {
                 grid-template-columns: 1fr;
             }
+
             .map-place-card {
                 border-right: none;
                 border-bottom: 1px solid #e0e0e0;
@@ -1149,6 +1350,7 @@
                 grid-template-columns: 1fr;
                 gap: 32px;
             }
+
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
@@ -1377,6 +1579,7 @@
                 line-height: 1.35;
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
+                line-clamp: 2;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
             }
@@ -1652,14 +1855,85 @@
             </div>
 
             <div class="grid-3">
-                <!-- 1. Private Swimming Pool -->
+                <!-- 1. Refrigerator -->
                 <div class="amenity-card anim-up">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
+                            <rect x="5" y="2" width="14" height="20" rx="2" />
+                            <line x1="5" y1="10" x2="19" y2="10" />
+                            <line x1="9" y1="5" x2="9" y2="7" />
+                            <line x1="9" y1="13" x2="9" y2="16" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="amenity-title">Refrigerator</div>
+                        <div class="amenity-sub">Keep food, drinks &amp; cakes chilled and fresh</div>
+                    </div>
+                </div>
+
+                <!-- 2. Microwave Oven -->
+                <div class="amenity-card anim-up delay-1">
+                    <div class="amenity-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="4" width="20" height="15" rx="2" />
+                            <rect x="5" y="7" width="10" height="9" rx="1" />
+                            <circle cx="18" cy="8.5" r="1" fill="currentColor" />
+                            <circle cx="18" cy="11.5" r="1" fill="currentColor" />
+                            <line x1="17" y1="14.5" x2="19" y2="14.5" />
+                            <path d="M6 19v2" />
+                            <path d="M18 19v2" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="amenity-title">Microwave Oven</div>
+                        <div class="amenity-sub">Instant heating for meals, snacks &amp; breakfast</div>
+                    </div>
+                </div>
+
+                <!-- 3. Gas Stove -->
+                <div class="amenity-card anim-up delay-2">
+                    <div class="amenity-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="4" width="20" height="15" rx="2" />
+                            <circle cx="8" cy="11.5" r="3" />
+                            <circle cx="16" cy="11.5" r="3" />
+                            <path d="M8 9.5v4" />
+                            <path d="M6 11.5h4" />
+                            <path d="M16 9.5v4" />
+                            <path d="M14 11.5h4" />
+                            <circle cx="7" cy="16" r="1" fill="currentColor" />
+                            <circle cx="12" cy="16" r="1" fill="currentColor" />
+                            <circle cx="17" cy="16" r="1" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="amenity-title">Gas Stove</div>
+                        <div class="amenity-sub">Full gas stove setup for fresh cooking &amp; tea</div>
+                    </div>
+                </div>
+
+                <!-- 4. RO Water Purifier -->
+                <div class="amenity-card anim-up">
+                    <div class="amenity-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2.5c0 0-6 7.5-6 11.5 0 3.31 2.69 6 6 6s6-2.69 6-6c0-4-6-11.5-6-11.5Z" />
+                            <path d="M9.5 14a2.5 2.5 0 0 0 2.5 2.5" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="amenity-title">RO Water Purifier</div>
+                        <div class="amenity-sub">Clean, purified safe drinking water on-site</div>
+                    </div>
+                </div>
+
+                <!-- 5. Private Swimming Pool -->
+                <div class="amenity-card anim-up delay-1">
+                    <div class="amenity-icon">
+                        <svg viewBox="0 0 24 24">
                             <path
-                                d="M2 15c1.67-1.33 3.33-1.33 5 0 1.67 1.33 3.33 1.33 5 0 1.67-1.33 3.33-1.33 5 0 1.67 1.33 3.33 1.33 5 0" />
+                                d="M2 15c1.67-1.33 3.33-1.33 5 0 1.67 1.33 3.33 1.33 5 0 1.67-1.33 3.33-1.33 5 0 1.67-1.33 3.33-1.33 5 0" />
                             <path
-                                d="M2 19c1.67-1.33 3.33-1.33 5 0 1.67 1.33 3.33 1.33 5 0 1.67-1.33 3.33-1.33 5 0 1.67 1.33 3.33 1.33 5 0" />
+                                d="M2 19c1.67-1.33 3.33-1.33 5 0 1.67 1.33 3.33 1.33 5 0 1.67-1.33 3.33-1.33 5 0 1.67-1.33 3.33-1.33 5 0" />
                             <path d="M7 11V5a2 2 0 0 1 2-2h1" />
                             <path d="M15 11V5a2 2 0 0 1 2-2h1" />
                             <path d="M7 8h8" />
@@ -1671,8 +1945,8 @@
                     </div>
                 </div>
 
-                <!-- 2. 3 Fully Furnished AC Rooms -->
-                <div class="amenity-card anim-up delay-1">
+                <!-- 6. 3 Fully Furnished AC Rooms -->
+                <div class="amenity-card anim-up delay-2">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M3 7v11" />
@@ -1689,8 +1963,8 @@
                     </div>
                 </div>
 
-                <!-- 3. 3 Luxury Attached Bathrooms -->
-                <div class="amenity-card anim-up delay-2">
+                <!-- 7. 3 Luxury Attached Bathrooms -->
+                <div class="amenity-card anim-up">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M4 4h2a4 4 0 0 1 4 4v1" />
@@ -1709,8 +1983,8 @@
                     </div>
                 </div>
 
-                <!-- 4. Big Theatre Room -->
-                <div class="amenity-card anim-up">
+                <!-- 8. Big Theatre Room -->
+                <div class="amenity-card anim-up delay-1">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <rect x="2" y="4" width="20" height="14" rx="2" />
@@ -1725,8 +1999,8 @@
                     </div>
                 </div>
 
-                <!-- 5. Box Cricket Pitch -->
-                <div class="amenity-card anim-up delay-1">
+                <!-- 9. Box Cricket Pitch -->
+                <div class="amenity-card anim-up delay-2">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="m14.5 4.5 5 5L8 21H3v-5L14.5 4.5z" />
@@ -1740,8 +2014,8 @@
                     </div>
                 </div>
 
-                <!-- 6. Private Big Garden / Lawn -->
-                <div class="amenity-card anim-up delay-2">
+                <!-- 10. Private Big Garden / Lawn -->
+                <div class="amenity-card anim-up">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M12 22v-8" />
@@ -1756,8 +2030,8 @@
                     </div>
                 </div>
 
-                <!-- 7. Kitchen + Basic Utensils -->
-                <div class="amenity-card anim-up">
+                <!-- 11. Kitchen Cookware & Utensils -->
+                <div class="amenity-card anim-up delay-1">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M4 11h16a1 1 0 0 1 1 1v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5v-2a1 1 0 0 1 1-1Z" />
@@ -1769,13 +2043,13 @@
                         </svg>
                     </div>
                     <div>
-                        <div class="amenity-title">Kitchen + Basic Utensils</div>
-                        <div class="amenity-sub">Gas stove, fridge &amp; basic cooking utensils</div>
+                        <div class="amenity-title">Kitchen Cookware &amp; Utensils</div>
+                        <div class="amenity-sub">Plates, spoons, cooking pans &amp; basic vessels</div>
                     </div>
                 </div>
 
-                <!-- 8. 2nd Kitchen for Big Events -->
-                <div class="amenity-card anim-up delay-1">
+                <!-- 12. 2nd Kitchen for Big Events -->
+                <div class="amenity-card anim-up delay-2">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path
@@ -1789,8 +2063,8 @@
                     </div>
                 </div>
 
-                <!-- 9. Dedicated Dining Area -->
-                <div class="amenity-card anim-up delay-2">
+                <!-- 13. Dedicated Dining Area -->
+                <div class="amenity-card anim-up">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
@@ -1804,8 +2078,8 @@
                     </div>
                 </div>
 
-                <!-- 10. Hot Water Facility -->
-                <div class="amenity-card anim-up">
+                <!-- 14. Hot Water Facility -->
+                <div class="amenity-card anim-up delay-1">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M8 4c0 2.5-2 2.5-2 5s2 2.5 2 5" />
@@ -1821,8 +2095,8 @@
                     </div>
                 </div>
 
-                <!-- 11. Private Event Area -->
-                <div class="amenity-card anim-up delay-1">
+                <!-- 15. Private Event Area -->
+                <div class="amenity-card anim-up delay-2">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M12 3l2.2 5.5L20 10.7l-5.8 2.2L12 18.5l-2.2-5.6L4 10.7l5.8-2.2L12 3z" />
@@ -1838,8 +2112,8 @@
                     </div>
                 </div>
 
-                <!-- 12. Parking Area -->
-                <div class="amenity-card anim-up delay-2">
+                <!-- 16. Parking Area -->
+                <div class="amenity-card anim-up">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M5 17H3v-5l2-5h14l2 5v5h-2" />
@@ -1854,8 +2128,8 @@
                     </div>
                 </div>
 
-                <!-- 13. Camp Fire -->
-                <div class="amenity-card anim-up">
+                <!-- 17. Camp Fire -->
+                <div class="amenity-card anim-up delay-1">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M12 3c1.5 3 4.5 5 4.5 9a4.5 4.5 0 1 1-9 0c0-2.5 1.5-4.5 3-6 0 2 1.5 2.5 1.5-3z" />
@@ -1869,8 +2143,8 @@
                     </div>
                 </div>
 
-                <!-- 14. 25 Extra Mattresses & 25 Chairs -->
-                <div class="amenity-card anim-up delay-1">
+                <!-- 18. 25 Extra Mattresses & 25 Chairs -->
+                <div class="amenity-card anim-up delay-2">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M6 19v2" />
@@ -1885,8 +2159,8 @@
                     </div>
                 </div>
 
-                <!-- 15. On-site Caretaker -->
-                <div class="amenity-card anim-up delay-2">
+                <!-- 19. On-site Caretaker -->
+                <div class="amenity-card anim-up">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -1899,8 +2173,8 @@
                     </div>
                 </div>
 
-                <!-- 16. Scenic Photoshoot Locations -->
-                <div class="amenity-card anim-up">
+                <!-- 20. Scenic Photoshoot Locations -->
+                <div class="amenity-card anim-up delay-1">
                     <div class="amenity-icon">
                         <svg viewBox="0 0 24 24">
                             <path
@@ -1914,10 +2188,9 @@
                     </div>
                 </div>
             </div>
-
             <div class="mobile-more-wrap">
                 <button type="button" id="amenitiesMoreBtn" class="btn-mobile-more" onclick="toggleAmenitiesMobile()">
-                    <span>View All 16 Amenities</span>
+                    <span>View All 20 Amenities</span>
                     <span id="amenitiesMoreIcon">&#9662;</span>
                 </button>
             </div>
@@ -2274,8 +2547,8 @@
             </div>
 
             <div style="text-align: center; margin-top: 36px;" class="anim-up">
-                <a href="https://www.google.com/maps?cid=3560576159371228736" target="_blank"
-                    rel="noopener noreferrer" class="tab-btn active">
+                <a href="https://www.google.com/maps?cid=3560576159371228736" target="_blank" rel="noopener noreferrer"
+                    class="tab-btn active">
                     View All Reviews on Google &rarr;
                 </a>
             </div>
@@ -2329,9 +2602,8 @@
                             </svg>
                             <span>Chat on WhatsApp</span>
                         </a>
-                        <a href="https://www.google.com/maps?cid=3560576159371228736"
-                            target="_blank" rel="noopener noreferrer" class="btn-outline"
-                            style="width: 100%; border-radius: 99px;">
+                        <a href="https://www.google.com/maps?cid=3560576159371228736" target="_blank"
+                            rel="noopener noreferrer" class="btn-outline" style="width: 100%; border-radius: 99px;">
                             Open Location in Google Maps
                         </a>
                     </div>
@@ -2353,8 +2625,60 @@
                                     class="form-control">
                             </div>
                             <div class="form-group">
-                                <label>Your Phone Number</label>
-                                <input id="guestPhone" required type="tel" placeholder="+91 98000 00000"
+                                <label>Your Phone Number (10 Digits)</label>
+                                <input id="guestPhone" required type="tel" maxlength="10" pattern="[6-9][0-9]{9}"
+                                    placeholder="e.g. 98250 12345" class="form-control"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)">
+                                <small
+                                    style="color: #9A9183; font-size: 0.72rem; margin-top: 4px; display: block;">Exact
+                                    10-digit mobile number</small>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group date-picker-group">
+                                <label for="guestDate">Booking / Check-in Date</label>
+                                <div class="date-input-wrap">
+                                    <input id="guestDate" required type="text" readonly placeholder="DD / MM / YYYY"
+                                        class="form-control" autocomplete="off">
+                                    <button type="button" class="date-picker-icon-btn" aria-label="Open Calendar"
+                                        tabindex="-1">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <small style="color: #9A9183; font-size: 0.72rem; margin-top: 4px; display: block;">Tap
+                                    box to pick date from calendar</small>
+
+                                <!-- Luxury Gold Calendar Dropdown -->
+                                <div id="villaCalendar" class="villa-calendar-pop" style="display: none;">
+                                    <div class="cal-header">
+                                        <button type="button" class="cal-nav-btn" id="calPrevBtn"
+                                            aria-label="Previous Month">&#8249;</button>
+                                        <div class="cal-title" id="calTitle">November 2026</div>
+                                        <button type="button" class="cal-nav-btn" id="calNextBtn"
+                                            aria-label="Next Month">&#8250;</button>
+                                    </div>
+                                    <div class="cal-weekdays">
+                                        <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                                    </div>
+                                    <div class="cal-days" id="calDaysGrid"></div>
+                                    <div class="cal-footer">
+                                        <button type="button" class="cal-today-btn" id="calTodayBtn">Today</button>
+                                        <button type="button" class="cal-close-btn" id="calClearBtn">Clear</button>
+                                        <button type="button" class="cal-close-btn" id="calCloseBtn">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="guestPersons">Approx. Persons / Guests</label>
+                                <input id="guestPersons" required type="text" placeholder="e.g. 15-20 Persons"
                                     class="form-control">
                             </div>
                         </div>
@@ -2392,7 +2716,8 @@
             <!-- Google Map Embed with Villa Building Overview Card -->
             <div class="map-wrap anim-up">
                 <div class="map-place-card">
-                    <img src="Images/villa3.jpeg" alt="Shreeyan Villa Building &amp; Pool View" class="map-place-photo" />
+                    <img src="Images/villa3.jpeg" alt="Shreeyan Villa Building &amp; Pool View"
+                        class="map-place-photo" />
                     <div class="map-place-body">
                         <div>
                             <h4 class="map-place-title">Shreeyan Villa</h4>
@@ -2483,9 +2808,10 @@
                         celebrations, and unforgettable weekends with friends.
                     </p>
                     <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        <a href="#inquiry" class="btn-gold" style="padding: 9px 18px; font-size: 0.72rem;">Send Inquiry</a>
-                        <a href="https://www.google.com/maps?cid=3560576159371228736"
-                            target="_blank" rel="noopener noreferrer" class="btn-outline"
+                        <a href="#inquiry" class="btn-gold" style="padding: 9px 18px; font-size: 0.72rem;">Send
+                            Inquiry</a>
+                        <a href="https://www.google.com/maps?cid=3560576159371228736" target="_blank"
+                            rel="noopener noreferrer" class="btn-outline"
                             style="padding: 9px 18px; font-size: 0.72rem;">Get Directions</a>
                     </div>
                 </div>
@@ -2524,7 +2850,8 @@
                                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                         </svg>
                         <span>Phone / WhatsApp: <a id="footerPhoneLink" href="https://wa.me/917016424731"
-                                style="color: var(--gold); font-weight: 500; text-decoration: underline;">+91 7016424731</a></span>
+                                style="color: var(--gold); font-weight: 500; text-decoration: underline;">+91
+                                7016424731</a></span>
                     </div>
                     <div class="footer-contact-item">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
@@ -2539,7 +2866,8 @@
 
             <div class="footer-bottom">
                 <div>&copy; 2026 Shreeyan Villa. All rights reserved.</div>
-                <div>Private Luxury Farmhouse &bull; Swimming Pool &bull; Home Theatre &bull; Box Cricket &bull; Green Lawns</div>
+                <div>Private Luxury Farmhouse &bull; Swimming Pool &bull; Home Theatre &bull; Box Cricket &bull; Green
+                    Lawns</div>
             </div>
         </div>
     </footer>
@@ -2653,7 +2981,7 @@
             const expanded = grid.classList.toggle('mobile-expanded');
             btn.innerHTML = expanded
                 ? '<span>Show Less Amenities</span><span>&#9652;</span>'
-                : '<span>View All 16 Amenities</span><span>&#9662;</span>';
+                : '<span>View All 20 Amenities</span><span>&#9662;</span>';
             if (expanded) {
                 grid.querySelectorAll('.amenity-card').forEach(c => c.classList.add('in-view'));
             }
@@ -2701,17 +3029,226 @@
             document.getElementById('lightbox').classList.add('open');
         }
 
-        // 6. WhatsApp Inquiry Form
+        // 6. Luxury Custom Date Picker & WhatsApp Inquiry Form
+        let villaSelectedDate = null;
+
+        function closeVillaCalendar() {
+            const pop = document.getElementById('villaCalendar');
+            if (pop) pop.style.display = 'none';
+        }
+
+        (function initVillaDatePicker() {
+            const input = document.getElementById('guestDate');
+            const pop = document.getElementById('villaCalendar');
+            const title = document.getElementById('calTitle');
+            const grid = document.getElementById('calDaysGrid');
+            const prevBtn = document.getElementById('calPrevBtn');
+            const nextBtn = document.getElementById('calNextBtn');
+            const todayBtn = document.getElementById('calTodayBtn');
+            const clearBtn = document.getElementById('calClearBtn');
+            const closeBtn = document.getElementById('calCloseBtn');
+
+            if (!input || !pop || !title || !grid) return;
+
+            const monthNames = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            const monthShorts = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            let viewYear = today.getFullYear();
+            let viewMonth = today.getMonth();
+
+            function renderCalendar() {
+                title.textContent = `${monthNames[viewMonth]} ${viewYear}`;
+                grid.innerHTML = '';
+
+                const isCurrentMonth = (viewYear === today.getFullYear() && viewMonth === today.getMonth());
+                if (prevBtn) {
+                    prevBtn.disabled = isCurrentMonth;
+                }
+
+                const firstDay = new Date(viewYear, viewMonth, 1).getDay();
+                const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+
+                for (let i = 0; i < firstDay; i++) {
+                    const emptyCell = document.createElement('div');
+                    emptyCell.className = 'cal-day empty';
+                    grid.appendChild(emptyCell);
+                }
+
+                for (let d = 1; d <= daysInMonth; d++) {
+                    const dayCell = document.createElement('button');
+                    dayCell.type = 'button';
+                    dayCell.className = 'cal-day';
+                    dayCell.textContent = d;
+
+                    const thisDate = new Date(viewYear, viewMonth, d);
+                    thisDate.setHours(0, 0, 0, 0);
+
+                    if (thisDate < today) {
+                        dayCell.classList.add('disabled');
+                    } else {
+                        if (thisDate.getTime() === today.getTime()) {
+                            dayCell.classList.add('today');
+                        }
+                        if (villaSelectedDate && thisDate.getTime() === villaSelectedDate.getTime()) {
+                            dayCell.classList.add('selected');
+                        }
+
+                        dayCell.addEventListener('click', function (e) {
+                            e.stopPropagation();
+                            villaSelectedDate = thisDate;
+                            const dd = String(d).padStart(2, '0');
+                            const mName = monthShorts[viewMonth];
+                            const yyyy = viewYear;
+                            input.value = `${dd}-${mName}-${yyyy}`;
+                            closeVillaCalendar();
+                        });
+                    }
+
+                    grid.appendChild(dayCell);
+                }
+            }
+
+            function openCalendar() {
+                if (villaSelectedDate) {
+                    viewYear = villaSelectedDate.getFullYear();
+                    viewMonth = villaSelectedDate.getMonth();
+                } else {
+                    viewYear = today.getFullYear();
+                    viewMonth = today.getMonth();
+                }
+                renderCalendar();
+                pop.style.display = 'block';
+            }
+
+            input.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (pop.style.display === 'block') {
+                    closeVillaCalendar();
+                } else {
+                    openCalendar();
+                }
+            });
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    if (viewYear === today.getFullYear() && viewMonth === today.getMonth()) return;
+                    viewMonth--;
+                    if (viewMonth < 0) {
+                        viewMonth = 11;
+                        viewYear--;
+                    }
+                    renderCalendar();
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    viewMonth++;
+                    if (viewMonth > 11) {
+                        viewMonth = 0;
+                        viewYear++;
+                    }
+                    renderCalendar();
+                });
+            }
+
+            if (todayBtn) {
+                todayBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    villaSelectedDate = new Date(today);
+                    viewYear = today.getFullYear();
+                    viewMonth = today.getMonth();
+                    const dd = String(today.getDate()).padStart(2, '0');
+                    const mName = monthShorts[viewMonth];
+                    const yyyy = viewYear;
+                    input.value = `${dd}-${mName}-${yyyy}`;
+                    closeVillaCalendar();
+                });
+            }
+
+            if (clearBtn) {
+                clearBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    villaSelectedDate = null;
+                    input.value = '';
+                    renderCalendar();
+                });
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    closeVillaCalendar();
+                });
+            }
+
+            document.addEventListener('click', function (e) {
+                const group = document.querySelector('.date-picker-group');
+                if (group && !group.contains(e.target)) {
+                    closeVillaCalendar();
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeVillaCalendar();
+                }
+            });
+        })();
+
         function handleForm(e) {
             e.preventDefault();
             const name = document.getElementById('guestName').value.trim();
             const phone = document.getElementById('guestPhone').value.trim();
+            const date = document.getElementById('guestDate').value.trim();
+            const persons = document.getElementById('guestPersons').value.trim();
             const occ = document.getElementById('guestOccasion').value;
             const msg = document.getElementById('guestMsg').value.trim();
-            const text = `Hello Shreeyan Villa!%0A%0A*Website Inquiry*%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Occasion:* ${encodeURIComponent(occ)}%0A*Message:* ${encodeURIComponent(msg || 'Please share villa details.')}`;
+
+            // Validate date
+            if (!date) {
+                alert("Please select your Booking / Check-in Date.");
+                const dInput = document.getElementById('guestDate');
+                dInput.click();
+                return;
+            }
+
+            // Strict 10-digit Indian mobile number validation
+            const cleanPhone = phone.replace(/[^0-9]/g, '');
+            if (cleanPhone.length !== 10 || !/^[6-9]/.test(cleanPhone)) {
+                alert("Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9 (e.g. 98250 12345).");
+                const pInput = document.getElementById('guestPhone');
+                pInput.focus();
+                pInput.style.borderColor = "#ff5555";
+                setTimeout(() => { pInput.style.borderColor = ""; }, 3000);
+                return;
+            }
+
+            // If date is YYYY-MM-DD, convert to readable DD-MMM-YYYY
+            let formattedDate = date;
+            if (/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+                const parts = date.split('-');
+                const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                const mIdx = parseInt(parts[1], 10) - 1;
+                if (mIdx >= 0 && mIdx < 12) {
+                    formattedDate = `${parts[2]}-${months[mIdx]}-${parts[0]}`;
+                }
+            }
+
+            const text = `Hello Shreeyan Villa!%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(cleanPhone)}%0A*Booking Date:* ${encodeURIComponent(formattedDate)}%0A*Approx Persons:* ${encodeURIComponent(persons)}%0A*Occasion:* ${encodeURIComponent(occ)}%0A*Message:* ${encodeURIComponent(msg || 'Please share villa availability and pricing.')}`;
             window.open(`https://wa.me/91${VILLA_PHONE_NUMBER}?text=${text}`, '_blank');
             e.target.reset();
+            villaSelectedDate = null;
         }
+
     </script>
 </body>
 
