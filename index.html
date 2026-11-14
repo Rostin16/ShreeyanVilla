@@ -876,6 +876,145 @@
             flex-shrink: 0;
         }
 
+        /* Luxury Review QR Code Banner */
+        .review-qr-banner {
+            margin-top: 40px;
+            background: linear-gradient(135deg, #14382D 0%, #0c231c 100%);
+            border: 1px solid rgba(194, 159, 104, 0.45);
+            border-radius: 18px;
+            padding: clamp(22px, 3.5vw, 36px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+            color: #fff;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-qr-banner::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, rgba(194, 159, 104, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .review-qr-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .review-qr-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(194, 159, 104, 0.15);
+            border: 1px solid rgba(194, 159, 104, 0.35);
+            color: var(--gold-light);
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 10px;
+        }
+
+        .review-qr-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+            color: #fff;
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .review-qr-title span {
+            color: var(--gold);
+        }
+
+        .review-qr-desc {
+            font-size: 0.85rem;
+            color: #D6CFC2;
+            line-height: 1.55;
+            max-width: 540px;
+            margin-bottom: 18px;
+        }
+
+        .review-qr-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .review-qr-subtext {
+            font-size: 0.74rem;
+            color: #9A9183;
+        }
+
+        .review-qr-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            background: #0B1512;
+            border: 1px solid rgba(194, 159, 104, 0.35);
+            border-radius: 14px;
+            padding: 14px;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .qr-inner-frame {
+            background: #fff;
+            padding: 8px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-inner-frame img {
+            width: 120px;
+            height: 120px;
+            display: block;
+            border-radius: 4px;
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        .qr-scan-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold-light);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .review-qr-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px 20px;
+            }
+            .review-qr-content {
+                text-align: center;
+            }
+            .review-qr-actions {
+                justify-content: center;
+            }
+            .review-qr-box {
+                margin-top: 6px;
+            }
+        }
+
         /* Contact & Form */
         .contact-section {
             background: var(--bg-dark);
@@ -2546,11 +2685,41 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 36px;" class="anim-up">
-                <a href="https://www.google.com/maps?cid=3560576159371228736" target="_blank" rel="noopener noreferrer"
-                    class="tab-btn active">
-                    View All Reviews on Google &rarr;
-                </a>
+            <!-- Google Review QR Code & Action Card -->
+            <div class="review-qr-banner anim-up">
+                <div class="review-qr-content">
+                    <div class="review-qr-badge">
+                        <span style="color: #F59E0B;">★★★★★</span>
+                        <span>4.9 / 5.0 on Google Maps</span>
+                    </div>
+                    <h3 class="review-qr-title">Loved Your Stay at <span>Shreeyan Villa</span>?</h3>
+                    <p class="review-qr-desc">
+                        Scan the QR code with your phone camera to share your 5-star experience and photos on Google Maps, or click the button below!
+                    </p>
+                    <div class="review-qr-actions">
+                        <a href="https://www.google.com/maps/place/Shreeyan+Villa/@21.3195787,73.0286095,17z/data=!4m8!3m7!1s0x3be041003b6a6983:0x3169b526f70bf640!8m2!3d21.3195787!4d73.0286095!9m1!1b1!16s%2Fg%2F11x638slhb"
+                            target="_blank" rel="noopener noreferrer" class="btn-gold"
+                            style="padding: 12px 24px; font-size: 0.84rem; display: inline-flex; align-items: center; gap: 8px;">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <span>Write a Review on Google</span>
+                        </a>
+                        <span class="review-qr-subtext">&bull; Takes less than 1 min</span>
+                    </div>
+                </div>
+
+                <div class="review-qr-box">
+                    <div class="qr-inner-frame">
+                        <img src="Images/Review_qr.png" alt="Scan to Review Shreeyan Villa on Google" width="120" height="120">
+                    </div>
+                    <span class="qr-scan-label">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4" />
+                        </svg>
+                        <span>Scan with Phone Camera</span>
+                    </span>
+                </div>
             </div>
         </div>
     </section>
